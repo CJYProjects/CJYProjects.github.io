@@ -16,6 +16,8 @@ body{
     height: 100vh;
     
     background: dimgray;
+    
+    box-shadow: 0 0 15px rgba(127, 140, 141, 0.5);
 }
 
 header, footer{
@@ -48,15 +50,31 @@ footer{
 
 .social-box{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column nowrap;
     justify-content: center;
-    align-items: center;
-    
-    height: 50%;
-    
-    margin: 20px;
     
     border: solid green;
+}
+
+.social-icon a{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    
+    padding: 0.5em 0;
+    
+    color: white;
+    text-decoration: none;
+}
+
+.social-icon a:hover, .social-icon a:focus{
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+
+.social-icon a svg{
+    fill: white;
+    padding: 0 1em 0 1.5em;
 }
 
 .content-wrapper{
@@ -70,7 +88,7 @@ footer{
 
 .content-box{
     height: calc(100% - 60px);
-    width: cal(100% - 80px);
+    width: calc(100% - 80px);
     
     margin: 30px 40px;
     
@@ -94,11 +112,28 @@ footer{
     
     display: flex;
     flex-flow: column nowrap;
+    justify-content: center;
+    
+    align-items: center;
     
     gap: 5px;
+    
+    box-shadow: 0 0 10px rgba(127, 140, 141, 0.5);
+}
+
+.card:hover, .card:focus{
+    transform: scale(1.05);
+    text-decoration: underline;
 }
 
 .card img{
+    height: 100%;
+    width: calc(100% - 40px);
+    
+    object-fit: contain;
+}
+
+img{
     height: 100%;
     width: 100%;
     
@@ -126,8 +161,104 @@ footer{
 }
 
 .modal{
+    height: inherit;
+    width: inherit;
+    
+    top: 0;
+    position: fixed;
+    
+    padding: 20px 40px;
+    box-sizing: border-box;
+    
+    background: rgba(255, 255, 255, 0.1);
+    
+    display: none;
+}
+
+/* .active{ */
+    /* display: block; */
+/* } */
+
+.modal-content{
     height: 100%;
     width: 100%;
     
-    display: none;
+    position: relative;
+    
+    background: white;
+    border-radius: 15px;
+}
+
+.modal-title{
+    position: sticky;
+    top: 0;
+    left: 0;
+    
+    padding: 0.5em 1em;
+    
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.modal-title div{
+    font-size: 24px;
+}
+
+.modal-button{
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+    border-radius: 5px;
+    /* color: #ecf0f1; */
+    color: dimgray;
+    font-size: 110%;
+    margin: 0;
+}
+
+.modal-button:hover, .modal-button:focus{
+    text-decoration: underline;
+    transform: scale(1.5);
+}
+
+.modal-details{
+    bottom: calc(10px + 1em);
+    height: calc(100% - 90px);
+    border: solid black;
+    
+    overflow-y: auto;
+    text-align: center;
+}
+
+.screenshot-box{
+    height: 60%;
+    border: solid red;
+}
+
+.screenshot-box img{
+    height: 60%;
+}
+
+.site-details{
+    padding: 0 5em;
+    text-align: justify;
+}
+
+.site-link{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.site-link a{
+    color: black;
+    text-decoration: none;
+    padding: 0 0.5em;
+}
+
+.site-link a:hover, .site-link a:focus{
+    border-bottom: thin solid black;
 }

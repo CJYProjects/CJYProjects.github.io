@@ -8,16 +8,18 @@ body{
     margin: 0;
     padding: 0;
     
-    background: gainsboro;
+    background: #656565;
 }
 
 .header-wrapper{
     width: var(--sidebar-width);
     height: 100vh;
     
-    background: dimgray;
+    background: #252525;
     
     box-shadow: 0 0 15px rgba(127, 140, 141, 0.5);
+    
+    color: #999;
 }
 
 header, footer{
@@ -32,28 +34,32 @@ header, footer{
 
 header{
     top: 0;
-    
-    /* border: solid red;     */
 }
 
 .logo-box{
     margin: 20px;
-    
-    border: solid yellow;
+}
+
+#logo-cjy{
+    font-family: 'Goldman', cursive;
+    font-size: calc(var(--sidebar-width) / 3);
+    line-height: 0.7;
+}
+
+#logo-projects{
+    font-family: 'Goldman', cursive;
+    font-size: calc(var(--sidebar-width) / 8);
+    line-height: 0.9;
 }
 
 footer{
     bottom: 0;
-    
-    /* border: solid blue; */
 }
 
 .social-box{
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    
-    border: solid green;
 }
 
 .social-icon a{
@@ -63,7 +69,8 @@ footer{
     
     padding: 0.5em 0;
     
-    color: white;
+    font-family: 'Red Rose', cursive;
+    color: #999;
     text-decoration: none;
 }
 
@@ -73,7 +80,7 @@ footer{
 }
 
 .social-icon a svg{
-    fill: white;
+    fill: #999;
     padding: 0 1em 0 1.5em;
 }
 
@@ -105,7 +112,7 @@ footer{
 .card{
     padding: 30px 40px 20px;
     
-    background: white;
+    background: #F2F4F4 ;
     
     /* border: solid black; */
     border-radius: 15px;
@@ -131,6 +138,7 @@ footer{
     width: calc(100% - 40px);
     
     object-fit: contain;
+    box-shadow: 0 0 10px rgba(127, 140, 141, 0.5);
 }
 
 img{
@@ -142,6 +150,8 @@ img{
 
 .site-name{
     text-align: center;
+    font-family: 'Red Rose', cursive;
+    color: #252525;
 }
 
 #card-1{
@@ -175,10 +185,6 @@ img{
     display: none;
 }
 
-/* .active{ */
-    /* display: block; */
-/* } */
-
 .modal-content{
     height: 100%;
     width: 100%;
@@ -199,6 +205,9 @@ img{
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    
+    font-family: 'Goldman', cursive;
+    color: dimgray;
 }
 
 .modal-title div{
@@ -210,7 +219,6 @@ img{
     background-color: transparent;
     font-weight: bold;
     border-radius: 5px;
-    /* color: #ecf0f1; */
     color: dimgray;
     font-size: 110%;
     margin: 0;
@@ -228,6 +236,8 @@ img{
     
     overflow-y: auto;
     text-align: center;
+    
+    font-family: 'Saira', sans-serif;
 }
 
 .screenshot-box{
@@ -251,6 +261,8 @@ img{
     text-align: center;
     width: 100%;
     text-transform: uppercase;
+    
+    font-family: 'Red Rose', cursive;
 }
 
 .site-link a{

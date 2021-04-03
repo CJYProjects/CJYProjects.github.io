@@ -1,3 +1,21 @@
+* {
+  scrollbar-width: thin;
+  scrollbar-color: darkgray whitesmoke;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: whitesmoke;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: dimgray;
+  border: 3px solid whitesmoke;
+}
+
 html, body{
     max-height: 100vh;
     max-width: 100vw;
@@ -232,7 +250,7 @@ img{
 .modal-details{
     bottom: calc(10px + 1em);
     height: calc(100% - 90px);
-    border: solid black;
+    /* border: solid black; */
     
     overflow-y: auto;
     text-align: center;
@@ -242,7 +260,7 @@ img{
 
 .screenshot-box{
     height: 60%;
-    border: solid red;
+    /* border: solid red; */
 }
 
 .screenshot-box img{

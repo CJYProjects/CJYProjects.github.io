@@ -132,7 +132,6 @@ footer{
     
     background: #F2F4F4 ;
     
-    /* border: solid black; */
     border-radius: 15px;
     
     display: flex;
@@ -223,13 +222,17 @@ img{
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    align-items: center;
     
     font-family: 'Goldman', cursive;
     color: dimgray;
+    
+    border-bottom: thin solid whitesmoke;
 }
 
 .modal-title div{
-    font-size: 24px;
+    font-size: 18px;
+    line-height: 24px;
 }
 
 .modal-button{
@@ -248,9 +251,7 @@ img{
 }
 
 .modal-details{
-    bottom: calc(10px + 1em);
-    height: calc(100% - 90px);
-    /* border: solid black; */
+    height: calc(100% - 83px);
     
     overflow-y: auto;
     text-align: center;
@@ -260,7 +261,6 @@ img{
 
 .screenshot-box{
     height: 60%;
-    /* border: solid red; */
 }
 
 .screenshot-box img{
@@ -275,20 +275,125 @@ img{
 .site-link{
     position: absolute;
     bottom: 0;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
+    padding-top: 5px;
     text-align: center;
     width: 100%;
     text-transform: uppercase;
     
     font-family: 'Red Rose', cursive;
+    background: white;
 }
 
 .site-link a{
     color: black;
     text-decoration: none;
-    padding: 0 0.5em;
+    /* padding: 0 0.5em; */
 }
 
 .site-link a:hover, .site-link a:focus{
     border-bottom: thin solid black;
+}
+
+@media screen and (max-width: 649px){
+    .header-wrapper{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        
+        width: 100%;
+        height: auto;
+    }
+    
+    header, footer{
+        position: initial;
+        height: auto;
+        width: initial;
+    }
+    
+    .logo-box{
+        margin: 10px;
+    }
+    
+    .social-box{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        place-content: center;
+        
+        gap: 15px;
+        
+        margin: 10px 20px 10px 10px;
+    }
+    
+    .social-icon a, .social-icon a svg{
+        padding: 0;
+        text-align: center;
+    }
+    
+    #facebook-icon{
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    #twitter-icon{
+        grid-area: 1 / 2 / 2 / 3;
+    }
+
+    #github-icon{
+        grid-area: 2 / 1 / 3 / 2;
+    }
+
+    #email-icon{
+        grid-area: 2 / 2 / 3 / 3;
+    }
+    
+    .social-title{
+        display: none;
+    }
+    
+    .content-wrapper{
+        position: initial;
+        width: 100vw;
+    }
+    
+    .content-box{
+        display: flex;
+        flex-flow: column nowrap;
+        height: auto;
+        width: 100vw;
+        
+        margin: 30px 0;
+    }
+    
+    .card{
+        margin: 0 15px;
+    }
+    
+    .card img{
+        width: 100%;
+    }
+    
+    .modal{
+        height: 100vh;
+        width: 100vw;
+        
+        padding: 0;
+    }
+    
+    .modal-content{
+        border-radius: initial;
+    }
+    
+    .modal-title{
+        height: 65px;
+        box-sizing: border-box;
+    }
+    
+    .modal-details{
+        height: calc(100% - 100px);
+    }
+    
+    .site-details{
+        padding: 0 2em;
+    }
 }

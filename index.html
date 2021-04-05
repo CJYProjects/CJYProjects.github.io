@@ -48,19 +48,19 @@
         </div>
         <div class = "content-wrapper">
             <div id = "content-box" class = "content-box">
-                <div id = "card-1" class = "card" onclick = "showModal('modal-1')">
+                <div id = "card-1" class = "card" onclick = "showModal('modal-1', 'slide1')">
                     <img src = "screenshots/colorref1.png"></img>
                     <div class = "site-name">Color Reference</div>
                 </div>
-                <div id = "card-2" class = "card" onclick = "showModal('modal-2')">
+                <div id = "card-2" class = "card" onclick = "showModal('modal-2', 'slide2')">
                     <img src = "screenshots/philconsti1.png"></img>
                     <div class = "site-name">Philippine Constitution Web Layout</div>
                 </div>
-                <div id = "card-3" class = "card" onclick = "showModal('modal-3')">
+                <div id = "card-3" class = "card" onclick = "showModal('modal-3', 'slide3')">
                     <img src = "screenshots/buttons1.png"></img>
                     <div class = "site-name">Buttons and Effects Collection</div>
                 </div>
-                <div id = "card-4" class = "card" onclick = "showModal('modal-4')">
+                <div id = "card-4" class = "card" onclick = "showModal('modal-4', 'slide4')">
                     <img src = "screenshots/cafe1.png"></img>
                     <div class = "site-name">Cafe Website Mockup</div>
                 </div>
@@ -72,7 +72,11 @@
                         <button id="close-button" class="modal-button" onclick="closeModal('modal-1')"><i class="material-icons">close</i></button>
                     </div>
                     <div class = "modal-details">
-                        <div class = "screenshot-box"><img src = "screenshots/colorref1.png"></img></div>
+                        <div class = "screenshot-box">
+                            <div class = "slideshow-item slide1"><img src = "screenshots/colorref1.png"></img></div>
+                            <div class = "slideshow-item slide1"><img src = "screenshots/colorref2.png"></img></div>
+                            <div class = "slideshow-item slide1"><img src = "screenshots/colorref3.png"></img></div>
+                        </div>
                         <div class = "site-details">
                             <h3>About</h3>
                             <p>My personal color reference. Made when I was studying HTML and didn't have internet access.</p>
@@ -96,7 +100,11 @@
                         <button id="close-button" class="modal-button" onclick="closeModal('modal-2')"><i class="material-icons">close</i></button>
                     </div>
                     <div class = "modal-details">
-                        <div class = "screenshot-box"><img src = "screenshots/philconsti1.png"></img></div>
+                        <div class = "screenshot-box">
+                            <div class = "slideshow-item slide2"><img src = "screenshots/philconsti1.png"></img></div>
+                            <div class = "slideshow-item slide2"><img src = "screenshots/philconsti2.png"></img></div>
+                            <div class = "slideshow-item slide2"><img src = "screenshots/philconsti3.png"></img></div>
+                        </div>
                         <div class = "site-details">
                             <h3>About</h3>
                             <p>A web layout experiment / web design treatment of the 1987 Philippine Constitution. Layout can be used for any technical document.</p>
@@ -119,7 +127,11 @@
                         <button id="close-button" class="modal-button" onclick="closeModal('modal-3')"><i class="material-icons">close</i></button>
                     </div>
                     <div class = "modal-details">
-                        <div class = "screenshot-box"><img src = "screenshots/buttons1.png"></img></div>
+                        <div class = "screenshot-box slide3">
+                            <div class = "slideshow-item slide3"><img src = "screenshots/buttons1.png"></img></div>
+                            <div class = "slideshow-item slide3"><img src = "screenshots/buttons2.png"></img></div>
+                            <div class = "slideshow-item slide3"><img src = "screenshots/buttons3.png"></img></div>
+                        </div>
                         <div class = "site-details">
                             <h3>About</h3>
                             <p>My personal button designs and effects reference</p>
@@ -140,7 +152,11 @@
                         <button id="close-button" class="modal-button" onclick="closeModal('modal-4')"><i class="material-icons">close</i></button>
                     </div>
                     <div class = "modal-details">
-                        <div class = "screenshot-box"><img src = "screenshots/cafe1.png"></img></div>
+                        <div class = "screenshot-box slide4">
+                            <div class = "slideshow-item slide4"><img src = "screenshots/cafe1.png"></img></div>
+                            <div class = "slideshow-item slide4"><img src = "screenshots/cafe2.png"></img></div>
+                            <div class = "slideshow-item slide4"><img src = "screenshots/cafe3.png"></img></div>
+                        </div>
                         <div class = "site-details">
                             <h3>About</h3>
                             <p>A cyberpunk-themed / vaporwave aesthetics cafe website design mockup</p>
@@ -157,13 +173,22 @@
             </div>
         </div>
         <script>
+            var slideIndex = 0;
+            var slideN;
+            var timer = null;
+            
             const mediaQuery = window.matchMedia('(max-width: 649px)');
-            function showModal(modalName){
+            
+            function showModal(modalName, slideName){
                 document.getElementById(modalName).style.display = "block";
                 document.getElementById('content-box').style.display = "none";
+                slideN = slideName;
+                showSlide();
             }
             
             function closeModal(modalName){
+                clearTimeout(timer);
+                slideIndex = 0;
                 document.getElementById(modalName).style.display = "none";
                 if(mediaQuery.matches){
                     document.getElementById('content-box').style.display = "flex";
@@ -171,6 +196,19 @@
                 else{
                     document.getElementById('content-box').style.display = "grid";
                 }
+            }
+            
+            function showSlide(){
+                var slides = document.getElementsByClassName(slideN);
+                for(i = 0; i < slides.length; i++){
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if(slideIndex > slides.length){
+                    slideIndex = 1;
+                }
+                slides[slideIndex - 1].style.display = "block";
+                timer = setTimeout(showSlide, 3000);
             }
         </script>
     </body>

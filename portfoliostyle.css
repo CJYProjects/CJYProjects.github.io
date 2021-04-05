@@ -261,12 +261,39 @@ img{
 
 .screenshot-box{
     height: 60%;
+    width: 100%;
 }
 
-.screenshot-box img{
+.slideshow-item{
+    height: 90%;
+    animation: fade 1s ease-in-out;
+}
+
+@keyframes fade{
+    from{
+        opacity: 0.8;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.slideshow-item img{
     height: 90%;
     width: auto;
     margin: 20px;
+}
+
+.prev, .next{
+    height: 100%;
+    width: 10%;
+    background: black;
+    opacity: 0.3;
+    transition: 0.6s;
+}
+
+.prev:hover, .prev:focus, .next:hover, .next:focus{
+    opacity: 0.5;
 }
 
 .site-details{
@@ -409,8 +436,8 @@ img{
         height: auto;
     }
     
-    .screenshot-box img{
+    .slideshow-item img{
         width: 80%;
-        height: auto;
+        height: 200px;
     }
 }

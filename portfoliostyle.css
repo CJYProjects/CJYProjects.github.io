@@ -427,7 +427,9 @@ img{
     }
     
     .modal-details{
-        height: calc(100vh - 120px);
+        position: fixed;
+        top: 85px;
+        height: calc(100vh - 85px);
     }
     
     .site-details{
@@ -444,6 +446,8 @@ img{
     }
     
     .site-link{
-        bottom: 20px;
+        top: 65px;
+        height: 20px;
+        border-radius: initial;
     }
 }

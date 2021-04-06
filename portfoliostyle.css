@@ -317,6 +317,8 @@ img{
     
     font-family: 'Red Rose', cursive;
     background: white;
+    
+    border-radius: 15px;
 }
 
 .site-link a{
@@ -439,5 +441,9 @@ img{
     .slideshow-item img{
         width: 80%;
         height: 200px;
+    }
+    
+    .site-link{
+        bottom: 20px;
     }
 }

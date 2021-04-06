@@ -429,7 +429,7 @@ img{
     .modal-details{
         position: fixed;
         top: 85px;
-        height: calc(100vh - 85px);
+        height: calc(100vh - 105px);
     }
     
     .site-details{

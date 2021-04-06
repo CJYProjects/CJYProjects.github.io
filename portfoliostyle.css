@@ -425,7 +425,7 @@ img{
     }
     
     .modal-details{
-        height: calc(100% - 100px);
+        height: calc(100vh - 120px);
     }
     
     .site-details{
